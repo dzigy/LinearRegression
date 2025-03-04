@@ -64,7 +64,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 X_train_const = sm.add_constant(X_train)
 
 #Fit initial model
-initialModel = sm.OLS(y, X).fit()
+initialModel = sm.OLS(y_train, X_train_const).fit()
 print("\nSUMMARY OF THE MODEL:")
 print(initialModel.summary())
 print("\n")
